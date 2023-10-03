@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🗺️ Travel Planning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Josefin+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #79c2d0;
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        color: #406d9a;
+      }
+
+      body,
+      p {
+        line-height: 1.4em;
+      }
+
+      .nav-menu {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid #fff;
+        z-index: 10;
+      }
+
+      .link {
+        cursor: pointer;
+        transition: color 200ms;
+      }
+
+      .link-primary {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .link-primary:hover {
+        color: #efefef;
+      }
+
+      .link-secondary {
+        color: #4373a2;
+      }
+
+      .link-secondary:hover {
+        color: #5585b5;
+      }
+
+      .list-top {
+        display: inline;
+        margin: 0 15px;
+        color: white;
+        font-size: 26px;
+      }
+
+      .top-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #5585b5;
+        margin: 0;
+      }
+
+      .lamina-base {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 48px 0;
+      }
+
+      .container-less-padding {
+        padding: 24px 0;
+      }
+
+      .container-text {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .lamina-1 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/301/original/Screenshot_2023-07-11_at_15.27.31.png?1689082108");
+        width: 100%;
+        padding: 16px;
+        background-size: cover;
+        background-position: center;
+        text-align: left;
+      }
+
+      .text-box {
+        background-color: #ffffffee;
+        margin: 0 auto;
+        padding: 20px 40px;
+        border: 3px solid #ffffffee;
+        border-radius: 3px;
+        font-size: 24px;
+      }
+
+      .text-lamina-1 {
+        color: #406d9a;
+      }
+
+      .title {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        margin: 0;
+        font-family: "Josefin Sans", sans-serif;
+        letter-spacing: -1px;
+        word-spacing: -1px;
+        line-height: 1.2em;
+        font-size: 38px;
+      }
+
+      .title-blue {
+        color: #406d9a;
+      }
+
+      .title-bg {
+        background-color: #406d9aaa;
+        color: #fff;
+        padding: 16px 16px 8px;
+        border-radius: 12px;
+      }
+
+      .lamina-blue-gradient-bg {
+        background: rgb(121, 194, 208);
+        background: radial-gradient(
+          circle,
+          rgba(121, 194, 208, 1) 10%,
+          rgba(85, 133, 181, 1) 90%
+        );
+      }
+
+      .lamina-2 {
+        background-size: cover;
+        background-position: center;
+        display: block;
+      }
+
+      .tips-box-list {
+        display: inline-block;
+      }
+
+      .tip-list {
+        text-align: left;
+      }
+
+      .tip-content {
+        padding: 0 16px;
+      }
+
+      .tip-box-image-hotel {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/302/original/GettyImages-1207490255-e1615485559611.jpg?1689082166");
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }
+
+      .tip-box-image-food {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/303/original/DSC05629-1024x683.jpg?1689082199");
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }
+
+      .tip-box-image-itinerary {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/304/original/shutterstock_2206967581.jpg?1689082230");
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }
+      .lamina-3 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/253/original/IMG_7109.jpg?1687867163");
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .box-list {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+      }
+
+      .box {
+        display: inline-block;
+        list-style-type: none;
+        margin: 10px;
+        width: 350px;
+        border: 2px solid white;
+        padding: 1px 1px 16px 1px;
+      }
+
+      .box-big {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+        max-width: 900px;
+        min-height: 400px;
+        padding: 0;
+      }
+
+      .box-big-column {
+        flex: 1;
+      }
+
+      .box-image-orlando {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/305/original/ezgif.com-webp-to-jpg.jpg?1689082349");
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }
+
+      .box-image-switzerland {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/307/original/Lauterbrunnen-montagna-estate-scaled.jpg?1689082380");
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }
+      .box-image-lisbon {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/308/original/lisbon-portugal-LISBONTG0521-c933a0fb669647619fa580f6c602c4c8.jpg?1689082422");
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      }
+
+      .box,
+      .box-image {
+        border-radius: 4px 4px 0 0;
+        background-color: #ffffffde;
+      }
+
+      .box-title {
+        margin-top: 16px;
+        font-size: 48px;
+        font-weight: 600;
+        font-family: "Dancing Script", cursive;
+        padding: 12px 16px;
+      }
+
+      .box-text {
+        padding: 0 16px;
+      }
+
+      .backdrop-container {
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+      }
+
+      .lamina-4 {
+        background-color: #79c2d0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: bottom center;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/310/original/ezgif.com-webp-to-jpg_%281%29.jpg?1689082538");
+      }
+
+      .wheres-next-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/311/original/cherry-blossoms-mt-fuji-japan.jpg?1689082677);
+      }
+
+      .wheres-next-content {
+        padding: 16px;
+      }
+
+      @media (max-width: 940px) {
+        .box-big {
+          width: 95%;
+          flex-direction: column;
+        }
+
+        .wheres-next-image {
+          height: 400px;
+        }
+
+        .wheres-next-content {
+          padding: 24px;
+        }
+      }
+
+      .wheres-next-content-text {
+        margin: 0;
+      }
+
+      .wheres-next-content-text:not(:first-child) {
+        margin-top: 1em;
+      }
+
+      .button-container {
+        margin-top: 28px;
+      }
+
+      .lamina-5 {
+        background-color: #5585b5;
+      }
+
+      .text-contact {
+        color: white;
+        text-align: center;
+        width: 95%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .button-country {
+        display: block;
+        color: #161616;
+        font-size: 20px;
+        padding: 15px 20px;
+        margin: 10px auto;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+        transition: all 200ms ease-in-out;
+      }
+
+      .button-country:hover {
+        background: #ddd;
+        color: #79c2d0;
+        cursor: pointer;
+        border-color: #ddd;
+      }
+
+      .button-link {
+        text-decoration: none;
+      }
+
+      .button {
+        display: block;
+        cursor: pointer;
+        color: #5585b5;
+        font-size: 20px;
+        padding: 15px 20px;
+        margin: 10px auto;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+        transition: all 200ms ease-in-out;
+      }
+
+      .button-secondary {
+        background-color: #5585b5;
+        color: #fff;
+      }
+
+      .button:hover {
+        background: #dedede;
+        border-color: #ddd;
+      }
+
+      .button-secondary:hover {
+        background-color: #406e9c;
+        color: #fff;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 100%;
+        margin: 0;
+        padding: 40px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-menu">
+      <ul class="top-page">
+        <li class="list-top">
+          <a class="link link-primary" onclick="navScrollTo('#lamina1')"
+            >TRAVEL</a
+          >
+        </li>
+        <li class="list-top">
+          <a class="link link-primary" onclick="navScrollTo('#lamina2')"
+            >TIPS</a
+          >
+        </li>
+        <li class="list-top">
+          <a class="link link-primary" onclick="navScrollTo('#lamina3')"
+            >TOP 3</a
+          >
+        </li>
+        <li class="list-top">
+          <a class="link link-primary" onclick="navScrollTo('#lamina4')"
+            >NEXT</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div id="lamina1" class="lamina-base lamina-1">
+      <div class="container container-text">
+        <div class="text-box">
+          <h1 class="title title-blue">TRAVEL PLANNING</h1>
+          <p class="text-lamina-1">
+            I love to travel, and I’m a travel planning enthusiast. I spend most
+            of my free time planning trips, even if I have nothing booked. This
+            hobby allows me to immerse myself in the world of travel and satisfy
+            my
+            <a
+              class="link link-secondary"
+              href="https://dictionary.cambridge.org/dictionary/english/wanderlust"
+              target="blank"
+            >
+              wanderlust
+            </a>
+            even when I’m not physically traveling.
+          </p>
+
+          <p class="text-lamina-1">
+            I really enjoy researching and organizing my trips, discovering new
+            destinations, finding the best deals on flights and accommodations,
+            creating itineraries, and exploring different aspects of travel,
+            such as local culture, cuisine, hidden gems and attractions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lamina2" class="lamina-base lamina-2 lamina-blue-gradient-bg">
+      <div class="container">
+        <h1 class="title">MY BEST TIPS FOR YOU TO PLAN YOUR TRIP</h1>
+        <div class="box-list tips-box-list">
+          <div class="box">
+            <div class="tip-box-image-itinerary"></div>
+            <div class="tip-content">
+              <div class="box-title">Itinerary</div>
+              <ul class="tip-list">
+                <li>
+                  Do your homework. Learn as much as possible about the
+                  destination before you go.
+                </li>
+                <li>
+                  Organize your daily itineraries by dividing them into areas.
+                </li>
+                <li>
+                  Use Google Maps to make your daily routes.
+                  <a
+                    class="link link-secondary"
+                    href="https://roamingtheamericas.com/guide-google-my-maps-trip-planning/"
+                    target="blank"
+                    >Learn more.
+                  </a>
+                </li>
+                <li>
+                  Things will not go to plan 100% of the time, so it’s important
+                  to learn to go with the flow and enjoy. 
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="tip-box-image-hotel"></div>
+            <div class="tip-content">
+              <div class="box-title">Hotels</div>
+              <ul class="tip-list">
+                <li>Book in advance.</li>
+                <li>Book with free cancelation.</li>
+                <li>Choose a central location to optimize your time.</li>
+                <li>Look for real photos and visitor reviews.</li>
+                <li>
+                  My favorite hotel search tool is
+                  <a
+                    class="link link-secondary"
+                    href="https://www.booking.com/"
+                    target="blank"
+                  >
+                    Booking.com.
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="tip-box-image-food"></div>
+            <div class="tip-content">
+              <div class="box-title">Food</div>
+              <ul class="tip-list">
+                <li>
+                  Check
+                  <a
+                    class="link link-secondary"
+                    href="https://www.tripadvisor.com/"
+                    target="blank"
+                  >
+                    TripAdvisor
+                  </a>
+                  and
+                  <a
+                    class="link link-secondary"
+                    href="https://www.google.com/maps"
+                    target="blank"
+                  >
+                    Google Maps
+                  </a>
+                  to look up restaurant reviews.
+                </li>
+                <li>
+                  Avoid eating at restaurants close to tourist attractions.
+                </li>
+                <li>Discover locals suggested restaurants.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lamina3" class="lamina-base lamina-3">
+      <div class="backdrop-container">
+        <div class="container">
+          <h1 class="title">MY TOP 3 FAVORITE DESTINATIONS</h1>
+
+          <ul class="box-list">
+            <li class="box">
+              <div class="box-image-switzerland"></div>
+              <div class="box-title">Switzerland</div>
+              <p class="box-text">
+                Switzerland was the only place where the immensity of its
+                natural beauty made me cry. A country of mountains, lakes,
+                waterfalls, villages, and attractive cities. Additionally, there
+                are wonderful hotels with outstanding views.
+              </p>
+
+              <p class="box-text">
+                My advice is to use public transportation across the country.
+                The train system between cities, as well as the cable cars,
+                boats, and buses, are extremely efficient, punctual, and easy to
+                navigate on your own. Don't waste your money on car rentals.
+              </p>
+            </li>
+            <li class="box">
+              <div class="box-image-orlando"></div>
+              <div class="box-title">Orlando, US</div>
+              <p class="box-text">
+                As a huge fan of Disney movies and The Wizarding World of Harry
+                Potter, Orlando is one of my favorite places in the world. This
+                is definitely not a place you can go without planning.
+              </p>
+
+              <p class="box-text">
+                You must plan your days ahead of time to maximize your time in
+                the parks and avoid spending hours in long lines at the
+                attractions. Also, the news and rules of the parks change every
+                month, make sure you're looking for the most recent information.
+              </p>
+            </li>
+            <li class="box">
+              <div class="box-image-lisbon"></div>
+              <div class="box-title">Lisbon, Portugal</div>
+              <p class="box-text">
+                Lisbon has a captivating charm that makes it one of my favorite
+                cities. In addition, there are gorgeous architecture, panoramic
+                views, delicious food, and wonderful hospitality.
+              </p>
+
+              <p class="box-text">
+                Lisbon is a fairly vertical city. Be cautious if you want to
+                avoid the hills or if you are not physically ready. When a route
+                says it takes 5 minutes to walk, it may actually take you longer
+                if it's uphill.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="lamina4" class="lamina-base lamina-4">
+      <div class="backdrop-container">
+        <div class="container">
+          <div class="title title-bg">WHERE'S NEXT?</div>
+          <div class="box box-big">
+            <div class="box-big-column">
+              <div class="wheres-next-image"></div>
+            </div>
+            <div class="box-big-column">
+              <div class="wheres-next-content">
+                <div class="box-title">Japan</div>
+                <p class="wheres-next-content-text">
+                  My next destination is Japan, and I am extremely excited about
+                  it. It has always been a dream for me to visit this country
+                  that is so diverse in so many ways.
+                </p>
+
+                <p class="wheres-next-content-text">
+                  Planning the itinerary for this trip has been challenging so
+                  far. My recommendation is to begin your planning at least six
+                  months before your vacation.
+                </p>
+
+                <p class="wheres-next-content-text">
+                  First, decide on the duration of your trip and prioritize the
+                  regions or cities you wish to visit.
+                </p>
+
+                <p class="wheres-next-content-text">
+                  Research the attractions and activities each destination
+                  offers, taking into account your interests and preferences.
+                </p>
+
+                <p class="wheres-next-content-text">
+                  For food lovers, Japan is truly a paradise. From street food
+                  to Michelin restaurants. It is essential to do research in
+                  advance on the places you plan to visit.
+                </p>
+
+                <div class="button-container">
+                  <a
+                    class="button-link"
+                    href="https://alljapantours.com/japan/travel/where-to-go/20-Must-Visit-Places-in-Japan/"
+                    target="_blank"
+                  >
+                    <button class="button button-secondary">See more</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lamina-base lamina-5 lamina-blue-gradient-bg">
+      <div class="container container-less-padding">
+        <strong class="text-contact">
+          Please contact me if you have any questions or need help planning your
+          next holiday ✈️
+        </strong>
+        <button id="contact-button" class="button">Contact Me</button>
+      </div>
+      <footer class="footer">
+        <div>
+          Coded by&nbsp;
+          <a
+            href="https://www.instagram.com/becafiamozzini/"
+            target="blank"
+            class="link link-secondary"
+          >
+            Rebeca Fiamozzini
+          </a>
+          &nbsp;for the&nbsp;
+          <a
+            href="https://www.shecodes.io/"
+            class="link link-secondary"
+            target="blank"
+            >SheCodes</a
+          >&nbsp; 🎨 Hobby Challenge.
+        </div>
+      </footer>
+    </div>
+    <script>
+      function contactMe() {
+        let name = prompt("What is your first name?");
+        let email = prompt("What is your e-mail?");
+        alert(
+          "Thanks, " +
+            name +
+            "! We'll be in touch with you via: " +
+            email +
+            " ✈️"
+        );
+      }
+
+      function navScrollTo(id) {
+        var element = document.querySelector(id);
+        var headerOffset = 60;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+
+      let contactButton = document.querySelector("#contact-button");
+      contactButton.addEventListener("click", contactMe);
+    </script>
+  </body>
+</html>
